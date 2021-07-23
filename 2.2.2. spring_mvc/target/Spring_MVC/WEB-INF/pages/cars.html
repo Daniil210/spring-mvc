@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,19 +7,21 @@
 </head>
 <body>
 
+
     <table border="1">
         <tr>
-            <td>Model</td>
-            <td>Year</td>
-            <td>Price</td>
+            <th>Модель</th>
+            <th>Год</th>
+            <th>Цена</th>
         </tr>
 
-        <tr>
-            <td th:text="${count}">index</td>
-            <td>"Flower Name"</td>
-            <td>"Flower Name"</td>
+        <tr th:each="car, state : ${carList}">
+            <td th:utext="${car.getModel()}">..</td>
+            <td th:utext="${car.getYear()}">..</td>
+            <td th:utext="${car.getPrice()}">..</td>
         </tr>
-</table>
+
+    </table>
 
 </body>
 </html>
