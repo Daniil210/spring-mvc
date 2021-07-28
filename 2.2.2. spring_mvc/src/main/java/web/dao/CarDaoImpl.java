@@ -23,4 +23,9 @@ public class CarDaoImpl implements CarDao{
 
         return carList.subList(0, count);
     }
+
+    @Override
+    public List<Car> getAllCars() {
+        return carList;
+    }
 }
